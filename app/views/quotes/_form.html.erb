@@ -1,0 +1,67 @@
+<%= form_for(quote) do |f| %>
+  <% if quote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+      <% quote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ticker %>
+    <%= f.text_field :ticker %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :open %>
+    <%= f.text_field :open %>
+  </div>
+
+  <div class="field">
+    <%= f.label :high %>
+    <%= f.text_field :high %>
+  </div>
+
+  <div class="field">
+    <%= f.label :low %>
+    <%= f.text_field :low %>
+  </div>
+
+  <div class="field">
+    <%= f.label :close %>
+    <%= f.text_field :close %>
+  </div>
+
+  <div class="field">
+    <%= f.label :adjusted_close %>
+    <%= f.text_field :adjusted_close %>
+  </div>
+
+  <div class="field">
+    <%= f.label :volume %>
+    <%= f.number_field :volume %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dividend %>
+    <%= f.text_field :dividend %>
+  </div>
+
+  <div class="field">
+    <%= f.label :split_coefficient %>
+    <%= f.text_field :split_coefficient %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
